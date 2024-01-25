@@ -43,5 +43,10 @@ namespace EbenezerSolution.Business.Controller
         {
             return this._activityService.Update(activity);
         }
+
+        public int Count()
+        {
+            return this._activityService.Count();
+        }
     }
 }

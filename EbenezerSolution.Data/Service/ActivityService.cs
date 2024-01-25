@@ -43,5 +43,10 @@ namespace EbenezerSolution.Data.Service
         {
             throw new System.NotImplementedException();
         }
+
+        public int Count()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

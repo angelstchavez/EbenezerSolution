@@ -10,5 +10,6 @@ namespace EbenezerSolution.Data.Generic
         T Get(int id);
         IEnumerable<T> Search(string term);
         bool Update(T entity);
+        int Count();
     }
 }

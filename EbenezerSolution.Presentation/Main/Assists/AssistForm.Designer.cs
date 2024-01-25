@@ -34,10 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.ClientSize = new System.Drawing.Size(634, 511);
             this.Font = new System.Drawing.Font("Arial", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AssistForm";
             this.Text = "AssistForm";
             this.ResumeLayout(false);

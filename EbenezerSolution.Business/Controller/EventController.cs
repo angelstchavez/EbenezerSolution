@@ -44,5 +44,10 @@ namespace EbenezerSolution.Business.Controller
         {
             return this._eventService.Update(@event);
         }
+
+        public int Count()
+        {
+            return this._eventService.Count();
+        }
     }
 }

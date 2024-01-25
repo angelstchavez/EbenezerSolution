@@ -1,4 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using EbenezerSolution.Business.Controller;
+using System.Collections.Generic;
+using System;
+using System.Windows.Forms;
+using EbenezerSolution.Entity;
+using System.Linq;
 
 namespace EbenezerSolution.Presentation.Main.Persons
 {
@@ -6,31 +11,136 @@ namespace EbenezerSolution.Presentation.Main.Persons
     {
         public PersonForm()
         {
+            this.personController = new PersonController();
             InitializeComponent();
+            LoadPersons();
         }
 
         #region Fields
+
+        //Controllers
+        private readonly PersonController personController;
+
+        //Fields
+        private int pageSize = 15;
+        private int currentPage = 1;
+        private int totalPageCount;
+        private int personId;
 
         #endregion
 
         #region Functions
 
+        private void LoadPersons()
+        {
+            IEnumerable<Person> persons = personController.GetAllpaginated(pageSize, currentPage);
+            int count = personController.Count();
+
+            totalPageCount = (int)Math.Ceiling((double)personController.Count() / pageSize);
+
+            btnPreviousPage.Enabled = currentPage > 1;
+
+            btnNextPage.Enabled = currentPage < totalPageCount;
+
+            labelPage.Text = $"Página {currentPage} de {totalPageCount}";
+
+            labelCount.Text = $"Registros: {count}";
+
+            dataGridView.Rows.Clear();
+
+            foreach (var person in persons)
+            {
+                int age = personController.CalculateAge(person.BirthDate);
+
+                dataGridView.Rows.Add(new object[] { person.Id, person.FullName, person.Gender, age });
+            }
+        }
+
         #endregion
 
         #region Events
 
-        private void buttonAdd_Click(object sender, System.EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             PersonControlForm personControlForm = new PersonControlForm();
             personControlForm.StartPosition = FormStartPosition.CenterParent;
             personControlForm.ShowDialog();
         }
 
-        private void buttonDetail_Click(object sender, System.EventArgs e)
+        private void buttonDetail_Click(object sender, EventArgs e)
         {
             PersonDetailForm personDetailForm = new PersonDetailForm();
             personDetailForm.StartPosition = FormStartPosition.CenterParent;
             personDetailForm.ShowDialog();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadPersons();
+            }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPageCount)
+            {
+                currentPage++;
+                LoadPersons();
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = textBoxSearch.Text.Trim();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                IEnumerable<Person> searchResults = personController.Search(searchTerm);
+
+                dataGridView.Rows.Clear();
+
+                if (searchResults != null && searchResults.Any())
+                {
+                    foreach (var person in searchResults)
+                    {
+                        int age = personController.CalculateAge(person.BirthDate);
+
+                        dataGridView.Rows.Add(new object[] { person.Id, person.FullName, person.Gender, age });
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron registros.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un término de búsqueda.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void buttonClearSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Clear();
+            LoadPersons();
         }
 
         #endregion

@@ -59,7 +59,7 @@
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 0);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(150, 461);
+            this.panelSide.Size = new System.Drawing.Size(150, 511);
             this.panelSide.TabIndex = 0;
             // 
             // panelButtons
@@ -75,7 +75,7 @@
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelButtons.Location = new System.Drawing.Point(0, 40);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(150, 376);
+            this.panelButtons.Size = new System.Drawing.Size(150, 426);
             this.panelButtons.TabIndex = 1;
             // 
             // buttonConfig
@@ -220,7 +220,7 @@
             this.panelInfo.Controls.Add(this.label2);
             this.panelInfo.Controls.Add(this.labelInfo);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(0, 416);
+            this.panelInfo.Location = new System.Drawing.Point(0, 466);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(150, 45);
             this.panelInfo.TabIndex = 1;
@@ -269,14 +269,14 @@
             this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBase.Location = new System.Drawing.Point(150, 0);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(634, 461);
+            this.panelBase.Size = new System.Drawing.Size(634, 511);
             this.panelBase.TabIndex = 1;
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 511);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelSide);
             this.Font = new System.Drawing.Font("Arial", 11F);

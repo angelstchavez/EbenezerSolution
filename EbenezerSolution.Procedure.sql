@@ -115,4 +115,14 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE dbo.CountPersons
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT COUNT(*) AS TotalPersons
+    FROM dbo.Person;
+END;
+GO
+
 -- //

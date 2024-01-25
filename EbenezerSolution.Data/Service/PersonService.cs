@@ -119,5 +119,28 @@ namespace EbenezerSolution.Data.Service
                 return dbConnection.Query<Person>("GetPersonsPaginated", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public int Count()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(_ConnectionString))
+            {
+                dbConnection.Open();
+
+                return dbConnection.QueryFirstOrDefault<int>("CountPersons", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public int CalculateAge(DateTime birthDate)
+        {
+            DateTime currentDate = DateTime.Now;
+            int age = currentDate.Year - birthDate.Year;
+
+            if (currentDate.Month < birthDate.Month || (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
+            {
+                age--;
+            }
+
+            return age;
+        }
     }
 }

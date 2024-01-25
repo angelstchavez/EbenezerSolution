@@ -1,6 +1,7 @@
 ﻿using EbenezerSolution.Data.Interface;
 using EbenezerSolution.Data.Service;
 using EbenezerSolution.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace EbenezerSolution.Business.Controller
@@ -47,6 +48,16 @@ namespace EbenezerSolution.Business.Controller
         public IEnumerable<Person> GetAllpaginated(int pageSize, int pageNumber)
         {
             return this._personService.GetAllpaginated(pageSize, pageNumber);
+        }
+
+        public int Count()
+        {
+            return this._personService.Count();
+        }
+
+        public int CalculateAge(DateTime birthDate)
+        {
+            return this._personService.CalculateAge(birthDate);
         }
     }
 }
