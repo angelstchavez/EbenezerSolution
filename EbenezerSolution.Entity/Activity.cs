@@ -1,6 +1,6 @@
 ﻿namespace EbenezerSolution.Entity
 {
-    internal class Activity
+    public class Activity
     {
         public int Id { get; set; }
     }

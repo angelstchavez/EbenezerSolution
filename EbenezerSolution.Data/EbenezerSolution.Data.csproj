@@ -46,7 +46,17 @@
   <ItemGroup>
     <Compile Include="Connection\MasterConnection.cs" />
     <Compile Include="Generic\IGenericService.cs" />
+    <Compile Include="Interface\IActivityService.cs" />
+    <Compile Include="Interface\IEventService.cs" />
+    <Compile Include="Interface\IMinistryService.cs" />
+    <Compile Include="Interface\IPersonService.cs" />
+    <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ActivityService.cs" />
+    <Compile Include="Service\EventService.cs" />
+    <Compile Include="Service\MinistryService.cs" />
+    <Compile Include="Service\PersonService.cs" />
+    <Compile Include="Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EbenezerSolution.Common\EbenezerSolution.Common.csproj">
@@ -58,10 +68,7 @@
       <Name>EbenezerSolution.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿namespace EbenezerSolution.Data.Connection
 {
-    internal class MasterConnection
+    public class MasterConnection
     {
+        public static string ConnectionString = "";
     }
 }

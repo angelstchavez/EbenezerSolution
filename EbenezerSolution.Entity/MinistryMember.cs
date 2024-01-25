@@ -1,7 +1,12 @@
-﻿namespace EbenezerSolution.Entity
+﻿using System;
+
+namespace EbenezerSolution.Entity
 {
-    internal class MinistryMember
+    public class MinistryMember
     {
         public int Id { get; set; }
+        public Ministry Ministry { get; set; }
+        public Person Member { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

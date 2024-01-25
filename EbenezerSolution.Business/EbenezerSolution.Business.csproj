@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ActivityController.cs" />
+    <Compile Include="Controller\EventController.cs" />
+    <Compile Include="Controller\MinistryController.cs" />
+    <Compile Include="Controller\PersonController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,8 +62,6 @@
       <Name>EbenezerSolution.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

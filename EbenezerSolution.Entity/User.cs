@@ -1,7 +1,14 @@
-﻿namespace EbenezerSolution.Entity
+﻿using System;
+
+namespace EbenezerSolution.Entity
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public bool IsActive { get; set; }
+        public Role Role { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
