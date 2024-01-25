@@ -24,9 +24,9 @@ namespace EbenezerSolution.Business.Controller
             return this._ministryService.Delete(id);
         }
 
-        public IEnumerable<Ministry> GelAll()
+        public IEnumerable<Ministry> GetAll()
         {
-            return this._ministryService.GelAll();
+            return this._ministryService.GetAll();
         }
 
         public Ministry Get(int id)

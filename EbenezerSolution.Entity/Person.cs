@@ -11,5 +11,6 @@ namespace EbenezerSolution.Entity
         public string Address { get; set; }
         public DateTime BirthDate { get; set; } 
         public DateTime CreationDate { get; set; }
+        public User User { get; set; }
     }
 }

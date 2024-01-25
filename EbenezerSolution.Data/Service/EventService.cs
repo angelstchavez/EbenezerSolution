@@ -24,7 +24,7 @@ namespace EbenezerSolution.Data.Service
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Event> GelAll()
+        public IEnumerable<Event> GetAll()
         {
             throw new System.NotImplementedException();
         }

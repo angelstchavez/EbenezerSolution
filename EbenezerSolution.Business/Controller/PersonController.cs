@@ -24,9 +24,9 @@ namespace EbenezerSolution.Business.Controller
             return this._personService.Delete(id);
         }
 
-        public IEnumerable<Person> GelAll()
+        public IEnumerable<Person> GetAll()
         {
-            return this._personService.GelAll();
+            return this._personService.GetAll();
         }
 
         public Person Get(int id)
@@ -42,6 +42,11 @@ namespace EbenezerSolution.Business.Controller
         public bool Update(Person person)
         {
             return this._personService.Update(person);
+        }
+
+        public IEnumerable<Person> GetAllpaginated(int pageSize, int pageNumber)
+        {
+            return this._personService.GetAllpaginated(pageSize, pageNumber);
         }
     }
 }

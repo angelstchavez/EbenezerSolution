@@ -6,7 +6,7 @@ namespace EbenezerSolution.Data.Generic
     {
         bool Create(T entity);
         bool Delete(int id);
-        IEnumerable<T> GelAll();
+        IEnumerable<T> GetAll();
         T Get(int id);
         IEnumerable<T> Search(string term);
         bool Update(T entity);

@@ -24,9 +24,9 @@ namespace EbenezerSolution.Business.Controller
             return this._userService.Delete(id);
         }
 
-        public IEnumerable<User> GelAll()
+        public IEnumerable<User> GetAll()
         {
-            return this._userService.GelAll();
+            return this._userService.GetAll();
         }
 
         public User Get(int id)

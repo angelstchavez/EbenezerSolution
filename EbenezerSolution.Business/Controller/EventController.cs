@@ -25,9 +25,9 @@ namespace EbenezerSolution.Business.Controller
             return this._eventService.Delete(id);
         }
 
-        public IEnumerable<Event> GelAll()
+        public IEnumerable<Event> GetAll()
         {
-            return this._eventService.GelAll();
+            return this._eventService.GetAll();
         }
 
         public Event Get(int id)

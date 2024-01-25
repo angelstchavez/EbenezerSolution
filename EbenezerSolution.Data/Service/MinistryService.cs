@@ -24,7 +24,7 @@ namespace EbenezerSolution.Data.Service
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Ministry> GelAll()
+        public IEnumerable<Ministry> GetAll()
         {
             throw new System.NotImplementedException();
         }

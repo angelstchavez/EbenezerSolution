@@ -24,9 +24,9 @@ namespace EbenezerSolution.Business.Controller
             return this._activityService.Delete(id);    
         }
 
-        public IEnumerable<Activity> GelAll()
+        public IEnumerable<Activity> GetAll()
         {
-            return this._activityService.GelAll();
+            return this._activityService.GetAll();
         }
 
         public Activity Get(int id)
