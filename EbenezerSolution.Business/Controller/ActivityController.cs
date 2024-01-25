@@ -9,6 +9,11 @@ namespace EbenezerSolution.Business.Controller
     {
         private readonly ActivityService _activityService;
 
+        public ActivityController()
+        {
+            this._activityService = new ActivityService();
+        }
+
         public bool Create(Activity activity)
         {
             return this._activityService.Create(activity);

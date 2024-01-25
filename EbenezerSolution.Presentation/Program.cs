@@ -13,7 +13,7 @@ namespace EbenezerSolution.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            Application.Run(new Main.Login.LoginForm());
         }
     }
 }
