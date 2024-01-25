@@ -5,6 +5,7 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{E677C633-B6F1-4CD6-A241-BF3B51AA1EB7}"
 	ProjectSection(SolutionItems) = preProject
+		EbenezerSolution.Insert.sql = EbenezerSolution.Insert.sql
 		EbenezerSolution.Procedure.sql = EbenezerSolution.Procedure.sql
 		EbenezerSolution.Table.sql = EbenezerSolution.Table.sql
 	EndProjectSection
