@@ -67,11 +67,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\Activities\ActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Activities\ActivityForm.Designer.cs">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Assists\AssistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Assists\AssistForm.Designer.cs">
+      <DependentUpon>AssistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Config\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Config\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Dashboard\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Dashboard\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Events\EventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Events\EventForm.Designer.cs">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Home\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Home\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Login\LoginForm.cs">
       <SubType>Form</SubType>
@@ -79,13 +109,64 @@
     <Compile Include="Main\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Ministries\MinistryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Ministries\MinistryForm.Designer.cs">
+      <DependentUpon>MinistryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Persons\PersonControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Persons\PersonControlForm.Designer.cs">
+      <DependentUpon>PersonControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Persons\PersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Persons\PersonForm.Designer.cs">
+      <DependentUpon>PersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Reports\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Reports\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main\Activities\ActivityForm.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Assists\AssistForm.resx">
+      <DependentUpon>AssistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Config\ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Dashboard\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Events\EventForm.resx">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Home\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Ministries\MinistryForm.resx">
+      <DependentUpon>MinistryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Persons\PersonControlForm.resx">
+      <DependentUpon>PersonControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Persons\PersonForm.resx">
+      <DependentUpon>PersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Reports\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,12 +211,6 @@
     <Folder Include="Image\24px\" />
     <Folder Include="Image\32px\" />
     <Folder Include="Image\extras\" />
-    <Folder Include="Main\Activitiers\" />
-    <Folder Include="Main\Assists\" />
-    <Folder Include="Main\Home\" />
-    <Folder Include="Main\Ministries\" />
-    <Folder Include="Main\Persons\" />
-    <Folder Include="Main\Reports\" />
     <Folder Include="Report\Base\" />
     <Folder Include="Report\Data\" />
     <Folder Include="Report\Desing\" />
