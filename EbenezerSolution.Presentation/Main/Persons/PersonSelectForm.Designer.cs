@@ -35,10 +35,11 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
             this.labelPage = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.Id,
             this.Nombre,
             this.Genero,
-            this.Telefono});
+            this.Edad});
             this.dataGridView.Location = new System.Drawing.Point(12, 42);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
@@ -100,6 +101,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(460, 276);
             this.dataGridView.TabIndex = 11;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // Id
             // 
@@ -122,34 +124,36 @@
             this.Genero.Name = "Genero";
             this.Genero.ReadOnly = true;
             // 
-            // Telefono
+            // Edad
             // 
-            this.Telefono.FillWeight = 102.3343F;
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
+            this.Edad.FillWeight = 102.3343F;
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
             // 
-            // button9
+            // btnPreviousPage
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(12, 324);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 25);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Anterior";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreviousPage.Location = new System.Drawing.Point(12, 324);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(80, 25);
+            this.btnPreviousPage.TabIndex = 13;
+            this.btnPreviousPage.Text = "Anterior";
+            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
-            // button8
+            // btnNextPage
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Location = new System.Drawing.Point(392, 324);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(80, 25);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "Siguiente";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPage.Location = new System.Drawing.Point(392, 324);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(80, 25);
+            this.btnNextPage.TabIndex = 14;
+            this.btnNextPage.Text = "Siguiente";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // labelPage
             // 
@@ -162,15 +166,25 @@
             this.labelPage.Text = "Cargando...";
             this.labelPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(12, 15);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(75, 17);
+            this.labelCount.TabIndex = 19;
+            this.labelCount.Text = "Registros:";
+            // 
             // PersonSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.labelPage);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.labelPage);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBoxSearch);
@@ -195,12 +209,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Genero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label labelPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
+        private System.Windows.Forms.Label labelCount;
     }
 }

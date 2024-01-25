@@ -1,4 +1,5 @@
-﻿using EbenezerSolution.Presentation.Main.Persons;
+﻿using EbenezerSolution.Entity;
+using EbenezerSolution.Presentation.Main.Persons;
 using System;
 using System.Windows.Forms;
 
@@ -6,6 +7,8 @@ namespace EbenezerSolution.Presentation.Main.Ministries
 {
     public partial class MinistryForm : Form
     {
+        private int personId;
+
         public MinistryForm()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace EbenezerSolution.Presentation.Main.Ministries
 
         private void buttonDetail_Click(object sender, EventArgs e)
         {
-            PersonDetailForm personDetailForm = new PersonDetailForm();
+            PersonDetailForm personDetailForm = new PersonDetailForm(personId);
             personDetailForm.StartPosition = FormStartPosition.CenterParent;
             personDetailForm.ShowDialog();
         }

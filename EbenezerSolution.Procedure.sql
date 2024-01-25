@@ -126,3 +126,81 @@ END;
 GO
 
 -- //
+
+-- Ministry
+CREATE PROCEDURE dbo.CreateMinistry
+    @Name NVARCHAR(MAX),
+    @IsActive BIT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO dbo.Ministry (Name, IsActive, CretionDate)
+    VALUES (@Name, @IsActive, GETDATE());
+END;
+GO
+
+CREATE PROCEDURE dbo.UpdateMinistry
+    @Id INT,
+    @Name NVARCHAR(MAX),
+    @IsActive BIT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE dbo.Ministry
+    SET Name = @Name,
+        IsActive = @IsActive
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE dbo.DeleteMinistry
+    @Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DELETE FROM dbo.Ministry WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE dbo.GetAllMinistries
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM dbo.Ministry;
+END;
+GO
+
+CREATE PROCEDURE dbo.GetMinistryById
+    @Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM dbo.Ministry WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE dbo.SearchMinistries
+    @Term NVARCHAR(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM dbo.Ministry WHERE Name LIKE '%' + @Term + '%';
+END;
+GO
+
+CREATE PROCEDURE dbo.CountMinistries
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT COUNT(*) AS TotalMinistries FROM dbo.Ministry;
+END;
+GO
+
+-- //

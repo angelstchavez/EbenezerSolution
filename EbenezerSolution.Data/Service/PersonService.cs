@@ -46,9 +46,9 @@ namespace EbenezerSolution.Data.Service
                 dbConnection.Open();
                 var parameters = new { Id = id };
 
-                var affectedRows = dbConnection.Execute("DeletePerson", parameters, commandType: CommandType.StoredProcedure);
+                dbConnection.Execute("DeletePerson", parameters, commandType: CommandType.StoredProcedure);
 
-                return affectedRows > 0;
+                return true;
             }
         }
 

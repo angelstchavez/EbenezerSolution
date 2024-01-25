@@ -69,7 +69,7 @@ namespace EbenezerSolution.Presentation.Main.Persons
 
         private void buttonDetail_Click(object sender, EventArgs e)
         {
-            PersonDetailForm personDetailForm = new PersonDetailForm();
+            PersonDetailForm personDetailForm = new PersonDetailForm(personId);
             personDetailForm.StartPosition = FormStartPosition.CenterParent;
             personDetailForm.ShowDialog();
         }
@@ -81,7 +81,29 @@ namespace EbenezerSolution.Presentation.Main.Persons
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (personId > 0)
+                {
+                    Person personToDelete = personController.Get(personId);
 
+                    DialogResult result = MessageBox.Show($"¿Seguro que deseas eliminar a \"{personToDelete.FullName}\"?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes && personController.Delete(personId))
+                    {
+                        MessageBox.Show($"Persona eliminada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadPersons();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona a una persona antes de eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al intentar eliminar la persona.\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonReport_Click(object sender, EventArgs e)
@@ -141,6 +163,14 @@ namespace EbenezerSolution.Presentation.Main.Persons
         {
             textBoxSearch.Clear();
             LoadPersons();
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                personId = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["Id"].Value);
+            }
         }
 
         #endregion
