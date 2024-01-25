@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EbenezerSolution.Presentation.Main.Persons;
+using System;
 using System.Windows.Forms;
 
 namespace EbenezerSolution.Presentation.Main.Ministries
@@ -15,6 +9,27 @@ namespace EbenezerSolution.Presentation.Main.Ministries
         public MinistryForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonAddMinistry_Click(object sender, EventArgs e)
+        {
+            MinistryControlForm ministryControlForm = new MinistryControlForm();
+            ministryControlForm.StartPosition = FormStartPosition.CenterParent;
+            ministryControlForm.ShowDialog();
+        }
+
+        private void buttonAddMember_Click(object sender, EventArgs e)
+        {
+            PersonSelectForm personSelectForm = new PersonSelectForm();
+            personSelectForm.StartPosition = FormStartPosition.CenterParent;
+            personSelectForm.ShowDialog();
+        }
+
+        private void buttonDetail_Click(object sender, EventArgs e)
+        {
+            PersonDetailForm personDetailForm = new PersonDetailForm();
+            personDetailForm.StartPosition = FormStartPosition.CenterParent;
+            personDetailForm.ShowDialog();
         }
     }
 }

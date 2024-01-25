@@ -109,6 +109,12 @@
     <Compile Include="Main\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Ministries\MinistryControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Ministries\MinistryControlForm.Designer.cs">
+      <DependentUpon>MinistryControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Ministries\MinistryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +127,23 @@
     <Compile Include="Main\Persons\PersonControlForm.Designer.cs">
       <DependentUpon>PersonControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Persons\PersonDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Persons\PersonDetailForm.Designer.cs">
+      <DependentUpon>PersonDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Persons\PersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Persons\PersonForm.Designer.cs">
       <DependentUpon>PersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Persons\PersonSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Persons\PersonSelectForm.Designer.cs">
+      <DependentUpon>PersonSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Reports\ReportForm.cs">
       <SubType>Form</SubType>
@@ -156,14 +174,23 @@
     <EmbeddedResource Include="Main\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Ministries\MinistryControlForm.resx">
+      <DependentUpon>MinistryControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Ministries\MinistryForm.resx">
       <DependentUpon>MinistryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Persons\PersonControlForm.resx">
       <DependentUpon>PersonControlForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Persons\PersonDetailForm.resx">
+      <DependentUpon>PersonDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Persons\PersonForm.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Persons\PersonSelectForm.resx">
+      <DependentUpon>PersonSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Reports\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>

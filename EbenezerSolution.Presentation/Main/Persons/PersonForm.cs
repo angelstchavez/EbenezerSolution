@@ -26,6 +26,13 @@ namespace EbenezerSolution.Presentation.Main.Persons
             personControlForm.ShowDialog();
         }
 
+        private void buttonDetail_Click(object sender, System.EventArgs e)
+        {
+            PersonDetailForm personDetailForm = new PersonDetailForm();
+            personDetailForm.StartPosition = FormStartPosition.CenterParent;
+            personDetailForm.ShowDialog();
+        }
+
         #endregion
     }
 }
