@@ -1,9 +1,9 @@
 ﻿using EbenezerSolution.Business.Controller;
-using System.Collections.Generic;
-using System;
-using System.Windows.Forms;
 using EbenezerSolution.Entity;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace EbenezerSolution.Presentation.Main.Persons
 {
@@ -69,9 +69,16 @@ namespace EbenezerSolution.Presentation.Main.Persons
 
         private void buttonDetail_Click(object sender, EventArgs e)
         {
-            PersonDetailForm personDetailForm = new PersonDetailForm(personId);
-            personDetailForm.StartPosition = FormStartPosition.CenterParent;
-            personDetailForm.ShowDialog();
+            if (personId <= 0)
+            {
+                MessageBox.Show("Por favor, selecciona una persona.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                PersonDetailForm personDetailForm = new PersonDetailForm(personId);
+                personDetailForm.StartPosition = FormStartPosition.CenterParent;
+                personDetailForm.ShowDialog();
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
