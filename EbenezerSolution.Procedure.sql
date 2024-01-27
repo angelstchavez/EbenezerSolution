@@ -204,3 +204,117 @@ END;
 GO
 
 -- //
+
+-- User
+CREATE PROCEDURE CreateUser
+    @Username NVARCHAR(MAX),
+    @Password NVARCHAR(MAX),
+    @IsActive BIT,
+    @RoleId INT
+AS
+BEGIN
+    INSERT INTO [dbo].[User] (Username, Password, IsActive, RoleId)
+    VALUES (@Username, @Password, @IsActive, @RoleId)
+END;
+GO
+
+CREATE PROCEDURE GetAllUsers
+AS
+BEGIN
+    SELECT
+        U.Id AS UserId,
+        U.Username,
+        U.Password,
+        U.IsActive AS UserIsActive,
+        U.RoleId AS UserRoleId,
+        R.Id AS RoleId,
+        R.Name AS RoleName,
+        R.IsActive AS RoleIsActive,
+        R.CreationDate AS RoleCreationDate
+    FROM
+        [dbo].[User] U
+    INNER JOIN
+        [dbo].[Role] R ON U.RoleId = R.Id
+END;
+GO
+
+CREATE PROCEDURE GetUserById
+    @UserId INT
+AS
+BEGIN
+    SELECT
+        U.Id AS UserId,
+        U.Username,
+        U.Password,
+        U.IsActive AS UserIsActive,
+        R.Id AS RoleId,
+        R.Name AS RoleName,
+        R.IsActive AS RoleIsActive,
+        R.CreationDate AS RoleCreationDate
+    FROM
+        [dbo].[User] U
+    INNER JOIN
+        [dbo].[Role] R ON U.RoleId = R.Id
+    WHERE
+        U.Id = @UserId
+END;
+GO
+
+CREATE PROCEDURE SearchUsers
+    @SearchTerm NVARCHAR(MAX)
+AS
+BEGIN
+    SELECT
+        U.Id AS UserId,
+        U.Username,
+        U.Password,
+        U.IsActive AS UserIsActive,
+        R.Id AS RoleId,
+        R.Name AS RoleName,
+        R.IsActive AS RoleIsActive,
+        R.CreationDate AS RoleCreationDate
+    FROM
+        [dbo].[User] U
+    INNER JOIN
+        [dbo].[Role] R ON U.RoleId = R.Id
+    WHERE
+        U.Username LIKE '%' + @SearchTerm + '%'
+END;
+GO
+
+CREATE PROCEDURE UpdateUser
+    @UserId INT,
+    @Username NVARCHAR(MAX),
+    @Password NVARCHAR(MAX),
+    @IsActive BIT,
+    @RoleId INT
+AS
+BEGIN
+    UPDATE [dbo].[User]
+    SET
+        Username = @Username,
+        Password = @Password,
+        IsActive = @IsActive,
+        RoleId = @RoleId
+    WHERE
+        Id = @UserId
+END;
+GO
+
+CREATE PROCEDURE DeleteUser
+    @UserId INT
+AS
+BEGIN
+    DELETE FROM [dbo].[User]
+    WHERE
+        Id = @UserId
+END;
+GO
+
+CREATE PROCEDURE CountUsers
+AS
+BEGIN
+    SELECT COUNT(*) AS UserCount
+    FROM [dbo].[User]
+END;
+GO

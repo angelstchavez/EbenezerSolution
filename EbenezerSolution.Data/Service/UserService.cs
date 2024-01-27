@@ -1,7 +1,10 @@
-﻿using EbenezerSolution.Data.Connection;
-using EbenezerSolution.Data.Interface;
-using EbenezerSolution.Entity;
+﻿using Dapper;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using EbenezerSolution.Entity;
+using EbenezerSolution.Data.Connection;
+using EbenezerSolution.Data.Interface;
 
 namespace EbenezerSolution.Data.Service
 {
@@ -14,39 +17,135 @@ namespace EbenezerSolution.Data.Service
             _connectionString = MasterConnection.ConnectionString;
         }
 
-        public bool Create(User entity)
+        public bool Create(User user)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var parameters = new
+                {
+                    Username = user.Username,
+                    Password = user.Password,
+                    IsActive = user.UserIsActive,
+                    RoleId = user.Role.Id
+                };
+
+                var affectedRows = connection.Execute("CreateUser", parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                return affectedRows > 0;
+            }
         }
 
         public bool Delete(int id)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var parameters = new
+                {
+                    UserId = id
+                };
+
+                var affectedRows = connection.Execute("DeleteUser", parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                return affectedRows > 0;
+            }
         }
 
         public IEnumerable<User> GetAll()
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return connection.Query<User, Role, User>("GetAllUsers", (user, role) =>
+                {
+                    user.Role = role;
+                    return user;
+                },
+                splitOn: "UserRoleId",
+                commandType: System.Data.CommandType.StoredProcedure)
+                .ToList();
+            }
         }
 
         public User Get(int id)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var parameters = new
+                {
+                    UserId = id
+                };
+
+                return connection.Query<User, Role, User>("GetUserById", (user, role) =>
+                {
+                    user.Role = role;
+                    return user;
+                },
+                parameters,
+                splitOn: "RoleId",
+                commandType: System.Data.CommandType.StoredProcedure)
+                .FirstOrDefault();
+            }
         }
 
         public IEnumerable<User> Search(string term)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var parameters = new
+                {
+                    SearchTerm = term
+                };
+
+                return connection.Query<User, Role, User>("SearchUsers", (user, role) =>
+                {
+                    user.Role = role;
+                    return user;
+                },
+                parameters,
+                splitOn: "RoleId",
+                commandType: System.Data.CommandType.StoredProcedure)
+                .ToList();
+            }
         }
 
-        public bool Update(User entity)
+        public bool Update(User user)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var parameters = new
+                {
+                    UserId = user.Id,
+                    Username = user.Username,
+                    Password = user.Password,
+                    IsActive = user.UserIsActive,
+                    RoleId = user.Role.Id
+                };
+
+                var affectedRows = connection.Execute("UpdateUser", parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                return affectedRows > 0;
+            }
         }
 
         public int Count()
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return connection.ExecuteScalar<int>("CountUsers", commandType: System.Data.CommandType.StoredProcedure);
+            }
         }
     }
 }
