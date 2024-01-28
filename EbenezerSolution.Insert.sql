@@ -325,3 +325,4 @@ VALUES ('Andres Salazar', 'Masculino', '3920123456', 'San Andrés, Colombia', '1
 INSERT INTO dbo.Person (FullName, Gender, NumberPhone, Address, BirthDate, UserId, CreationDate)
 VALUES ('Juliana Medina', 'Femenino', '3931234567', 'Ciénaga, Colombia', '1994-08-12', 1, GETDATE());
 
+-- Ok
