@@ -102,3 +102,4 @@ CREATE TABLE [dbo].[ActivityParticipant] (
 );
 GO
 
+-- ...
