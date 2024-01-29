@@ -212,6 +212,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,13 +244,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Image\100px\" />
-    <Folder Include="Image\16px\" />
     <Folder Include="Image\24px\" />
     <Folder Include="Image\32px\" />
     <Folder Include="Image\extras\" />
     <Folder Include="Report\Base\" />
     <Folder Include="Report\Data\" />
     <Folder Include="Report\Desing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\16px\16-config.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

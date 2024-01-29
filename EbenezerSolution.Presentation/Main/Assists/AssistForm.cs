@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EbenezerSolution.Presentation.Main.Persons;
 using System.Windows.Forms;
 
 namespace EbenezerSolution.Presentation.Main.Assists
@@ -15,6 +8,13 @@ namespace EbenezerSolution.Presentation.Main.Assists
         public AssistForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonAddAssist_Click(object sender, System.EventArgs e)
+        {
+            PersonSelectForm personSelectForm = new PersonSelectForm();
+            personSelectForm.StartPosition = FormStartPosition.CenterParent;
+            personSelectForm.ShowDialog();
         }
     }
 }

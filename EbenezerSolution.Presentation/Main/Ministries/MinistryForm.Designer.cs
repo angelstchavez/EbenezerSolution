@@ -45,6 +45,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.buttonAddMember = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanelMinistry = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSide.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.panelBase.SuspendLayout();
@@ -54,11 +55,12 @@
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelSide.Controls.Add(this.flowLayoutPanelMinistry);
             this.panelSide.Controls.Add(this.panelBottom);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 0);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(150, 461);
+            this.panelSide.Size = new System.Drawing.Size(150, 531);
             this.panelSide.TabIndex = 0;
             // 
             // panelBottom
@@ -114,14 +116,14 @@
             this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBase.Location = new System.Drawing.Point(150, 0);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(484, 461);
+            this.panelBase.Size = new System.Drawing.Size(484, 531);
             this.panelBase.TabIndex = 1;
             // 
             // buttonDetail
             // 
             this.buttonDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDetail.Location = new System.Drawing.Point(12, 379);
+            this.buttonDetail.Location = new System.Drawing.Point(12, 449);
             this.buttonDetail.Name = "buttonDetail";
             this.buttonDetail.Size = new System.Drawing.Size(70, 70);
             this.buttonDetail.TabIndex = 12;
@@ -154,7 +156,7 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(460, 332);
+            this.dataGridView.Size = new System.Drawing.Size(460, 402);
             this.dataGridView.TabIndex = 11;
             // 
             // Id
@@ -212,7 +214,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(402, 379);
+            this.button3.Location = new System.Drawing.Point(402, 449);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(70, 70);
             this.button3.TabIndex = 2;
@@ -223,7 +225,7 @@
             // 
             this.buttonAddMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddMember.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddMember.Location = new System.Drawing.Point(250, 379);
+            this.buttonAddMember.Location = new System.Drawing.Point(250, 449);
             this.buttonAddMember.Name = "buttonAddMember";
             this.buttonAddMember.Size = new System.Drawing.Size(70, 70);
             this.buttonAddMember.TabIndex = 1;
@@ -235,19 +237,27 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(326, 379);
+            this.button1.Location = new System.Drawing.Point(326, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 70);
             this.button1.TabIndex = 0;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanelMinistry
+            // 
+            this.flowLayoutPanelMinistry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelMinistry.Location = new System.Drawing.Point(0, 95);
+            this.flowLayoutPanelMinistry.Name = "flowLayoutPanelMinistry";
+            this.flowLayoutPanelMinistry.Size = new System.Drawing.Size(150, 436);
+            this.flowLayoutPanelMinistry.TabIndex = 1;
+            // 
             // MinistryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.ClientSize = new System.Drawing.Size(634, 531);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelSide);
             this.Font = new System.Drawing.Font("Arial", 11F);
@@ -284,5 +294,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Button buttonDetail;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMinistry;
     }
 }
