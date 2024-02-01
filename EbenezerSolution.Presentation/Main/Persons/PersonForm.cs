@@ -1,5 +1,6 @@
 ﻿using EbenezerSolution.Business.Controller;
 using EbenezerSolution.Entity;
+using EbenezerSolution.Presentation.Report.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,7 +116,8 @@ namespace EbenezerSolution.Presentation.Main.Persons
 
         private void buttonReport_Click(object sender, EventArgs e)
         {
-
+            GetAllUsersForm getAllUsersForm = new GetAllUsersForm();
+            getAllUsersForm.ShowDialog();
         }
 
         private void btnPreviousPage_Click(object sender, EventArgs e)

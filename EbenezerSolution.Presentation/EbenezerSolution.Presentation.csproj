@@ -17,7 +17,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -159,6 +159,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Base\GetAllUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Base\GetAllUsersForm.Designer.cs">
+      <DependentUpon>GetAllUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Data\MasterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +225,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\Base\GetAllUsersForm.resx">
+      <DependentUpon>GetAllUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Desing\ReportGetAllPersons.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,8 +273,6 @@
     <Folder Include="Image\24px\" />
     <Folder Include="Image\32px\" />
     <Folder Include="Image\extras\" />
-    <Folder Include="Report\Base\" />
-    <Folder Include="Report\Desing\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\16px\16-config.png" />
